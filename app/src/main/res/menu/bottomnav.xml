@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/nav_home" android:title="主页" android:icon="@drawable/ic_home"></item>
+    <item android:id="@+id/nav_classfiy" android:title="分类" android:icon="@drawable/ic_classify"></item>
+    <item android:id="@+id/nav_shopping" android:title="购物车" android:icon="@drawable/ic_shopping_cart"></item>
+    <item android:id="@+id/nav__message" android:title="消息" android:icon="@drawable/ic_message"></item>
+    <item android:id="@+id/nav_mine" android:title="我的" android:icon="@drawable/ic_mine"></item>
+
+</menu>

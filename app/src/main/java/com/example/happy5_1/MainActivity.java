@@ -8,7 +8,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
 
-import com.example.happy5_1.adapter.ViewAdapter;
+import com.example.happy5_1.adapter.MainBottemAdapter;
 import com.example.happy5_1.fragment.ClassFragment;
 import com.example.happy5_1.fragment.GouFragment;
 import com.example.happy5_1.fragment.HomeFragment;
@@ -23,22 +23,27 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
 
     private ViewPager viewpager;
-    private BottomNavigationView navigation;
+    private BottomNavigationView bavNav;
     private List<Fragment> list=new ArrayList<>();
+    private MainBottemAdapter mainBottemAdapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         initView();
+        initbavnav();
+    }
 
+    //初始化bavnav
+    private void initbavnav() {
         list.add(new HomeFragment());
         list.add(new ClassFragment());
         list.add(new GouFragment());
         list.add(new MsgFragment());
         list.add(new MineFragment());
 
-        ViewAdapter viewAdapter = new ViewAdapter(getSupportFragmentManager(),list);
-        viewpager.setAdapter(viewAdapter);
+        mainBottemAdapter= new MainBottemAdapter(getSupportFragmentManager(),list);
+        viewpager.setAdapter(mainBottemAdapter);
 
         viewpager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
@@ -48,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onPageSelected(int position) {
-                navigation.setSelectedItemId(position);
+                bavNav.setSelectedItemId(position);
             }
 
             @Override
@@ -58,8 +63,8 @@ public class MainActivity extends AppCompatActivity {
         });
 
         //超过三句 必加
-        navigation.setLabelVisibilityMode(LabelVisibilityMode.LABEL_VISIBILITY_LABELED);
-        navigation.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+        bavNav.setLabelVisibilityMode(LabelVisibilityMode.LABEL_VISIBILITY_LABELED);
+        bavNav.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
@@ -67,13 +72,13 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.nav_home:
                         viewpager.setCurrentItem(0);
                         break;
-                    case R.id.nav_shipin:
+                    case R.id.nav_classfiy:
                         viewpager.setCurrentItem(1);
                         break;
-                    case R.id.nav_toutiao:
+                    case R.id.nav_shopping:
                         viewpager.setCurrentItem(2);
                         break;
-                    case R.id.nav_msg:
+                    case R.id.nav__message:
                         viewpager.setCurrentItem(3);
                         break;
                     case R.id.nav_mine:
@@ -86,8 +91,9 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    //初始化
     private void initView() {
         viewpager = (ViewPager) findViewById(R.id.viewpager);
-        navigation = (BottomNavigationView) findViewById(R.id.navigation);
+        bavNav = (BottomNavigationView) findViewById(R.id.bav_nav);
     }
 }
