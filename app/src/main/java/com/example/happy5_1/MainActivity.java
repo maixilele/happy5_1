@@ -11,7 +11,7 @@ import androidx.viewpager.widget.ViewPager;
 import com.example.happy5_1.adapter.MainBottemAdapter;
 import com.example.happy5_1.fragment.ClassFragment;
 import com.example.happy5_1.fragment.GouFragment;
-import com.example.happy5_1.fragment.HomeFragment;
+import com.example.happy5_1.fragment.home.HomeFragment;
 import com.example.happy5_1.fragment.MineFragment;
 import com.example.happy5_1.fragment.MsgFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;

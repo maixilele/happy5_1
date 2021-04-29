@@ -1,14 +1,337 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragment.HomeFragment">
+    tools:context=".fragment.home.HomeFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
+        android:id="@+id/sreach_Linear"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="" />
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="#03A9F4">
 
-</FrameLayout>
+        <EditText
+            android:layout_width="0dp"
+            android:layout_weight="10"
+            android:layout_height="30dp"
+            android:hint="搜索商品/品类"
+            android:background="@drawable/home_edit"
+            android:layout_gravity="center"
+            android:cursorVisible="false"
+            android:layout_marginLeft="15dp"
+            android:paddingLeft="10dp"
+            android:textColorHint="#FFF"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:drawableLeft="@drawable/ic_sreach"></EditText>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="扫一扫"
+            android:textSize="10dp"
+            android:textColor="#FFF"
+            android:gravity="center"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="15dp"
+            android:drawableTop="@drawable/ic_scan"></TextView>
+    </LinearLayout>
+
+    <com.youth.banner.Banner
+        android:id="@+id/banner_home"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_below="@id/sreach_Linear"></com.youth.banner.Banner>
+
+    <LinearLayout
+        android:id="@+id/affiche_Linear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="#E1E1E1"
+        android:layout_below="@id/banner_home">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/home_affiche_l"
+            android:drawableLeft="@drawable/ic_broadcast"
+            android:text="公告"
+            android:textStyle="bold"
+            android:paddingLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginBottom="5dp"
+            android:paddingBottom="5dp"
+            android:paddingRight="10dp"
+            android:paddingTop="5dp"
+            android:textSize="15dp"
+            android:textColor="#F44336"></TextView>
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="1dp"
+            android:background="#E1E1E1"></View>
+
+        <ViewFlipper
+            android:id="@+id/viewFlipper_home"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:flipInterval="2000"
+            android:gravity="center"
+            android:background="@drawable/home_affiche_r"
+            android:paddingRight="10dp"
+            android:paddingLeft="10dp"
+            android:layout_marginRight="5dp"
+            android:paddingBottom="5dp"
+            android:paddingTop="5dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="夏日炎炎，第一波福利还有30秒到达战场"></TextView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="新用户立领1000元优惠券"></TextView>
+        </ViewFlipper>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/four_linear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@id/affiche_Linear"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="15dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:layout_marginBottom="15dp">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_marginRight="20dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_zhibo"></ImageView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="直播"
+                    android:layout_marginTop="5dp"
+                    android:textColor="#2196F3"></TextView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_marginRight="20dp">
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/ic_diannao"></ImageView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="电脑"
+                    android:layout_marginTop="5dp"
+                    android:textColor="#2196F3"></TextView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_marginRight="20dp">
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/ic_shouji"></ImageView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="手机"
+                    android:layout_marginTop="5dp"
+                    android:textColor="#2196F3"></TextView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/ic_pad"></ImageView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Pad"
+                    android:layout_marginTop="5dp"
+                    android:textColor="#2196F3"></TextView>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_marginRight="20dp">
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/ic_jiaju"></ImageView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="家居"
+                    android:layout_marginTop="5dp"
+                    android:textColor="#2196F3"></TextView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_marginRight="20dp">
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/ic_jiadian"></ImageView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="家电"
+                    android:layout_marginTop="5dp"
+                    android:textColor="#2196F3"></TextView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_marginRight="20dp">
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/ic_yundong"></ImageView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="运动"
+                    android:layout_marginTop="5dp"
+                    android:textColor="#2196F3"></TextView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/ic_xiuxian"></ImageView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="休闲"
+                    android:layout_marginTop="5dp"
+                    android:textColor="#2196F3"></TextView>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/tejia_linear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@id/four_linear">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="特价"
+            android:textColor="#FFF"
+            android:background="#F44336"
+            android:layout_marginLeft="10dp"
+            android:textSize="12dp"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"></TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="火爆进行中"
+            android:textStyle="bold"
+            android:textColor="#000000"
+            android:layout_marginLeft="10dp"></TextView>
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_below="@id/tejia_linear"
+        android:id="@+id/home_recycler"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FFF"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:paddingBottom="5dp"
+        android:layout_marginTop="5dp"/>
+
+</RelativeLayout>
