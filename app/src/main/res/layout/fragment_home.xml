@@ -3,6 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
     tools:context=".fragment.home.HomeFragment">
 
     <LinearLayout
@@ -28,24 +30,25 @@
             android:drawableLeft="@drawable/ic_sreach"></EditText>
 
         <TextView
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
             android:layout_gravity="center"
-            android:text="扫一扫"
-            android:textSize="10dp"
-            android:textColor="#FFF"
-            android:gravity="center"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="15dp"
-            android:drawableTop="@drawable/ic_scan"></TextView>
+            android:layout_weight="1"
+            android:drawableTop="@drawable/ic_scan"
+            android:gravity="center"
+            android:text="扫一扫"
+            android:textColor="#FFF"
+            android:textSize="10dp"></TextView>
     </LinearLayout>
 
     <com.youth.banner.Banner
         android:id="@+id/banner_home"
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        android:layout_below="@id/sreach_Linear"></com.youth.banner.Banner>
+        android:layout_below="@id/sreach_Linear"
+        android:layout_marginTop="7dp"></com.youth.banner.Banner>
 
     <LinearLayout
         android:id="@+id/affiche_Linear"

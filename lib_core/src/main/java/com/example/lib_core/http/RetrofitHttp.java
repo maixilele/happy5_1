@@ -29,7 +29,7 @@ public class RetrofitHttp {
                     .client(client)
                     .addConverterFactory(GsonConverterFactory.create())
                     .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
-                    .baseUrl("http://www.qubaobei.com")
+                    .baseUrl("http://39.98.153.96:8088/shopapi/")
                     .build();
         }
         return retrofit;

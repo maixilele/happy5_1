@@ -1,4 +1,4 @@
-package com.example.happy5_1;
+package com.example.happy5_1.activity;
 
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
 
+import com.example.happy5_1.R;
 import com.example.happy5_1.adapter.MainBottemAdapter;
 import com.example.happy5_1.fragment.ClassFragment;
 import com.example.happy5_1.fragment.GouFragment;

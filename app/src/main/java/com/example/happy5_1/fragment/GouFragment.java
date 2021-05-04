@@ -1,12 +1,15 @@
 package com.example.happy5_1.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import androidx.fragment.app.Fragment;
 
+import com.example.happy5_1.Pay.PayActivity;
 import com.example.happy5_1.R;
 
 
@@ -56,11 +59,21 @@ public class GouFragment extends Fragment {
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
     }
-
+    Button b1;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_gou, container, false);
+        View inflate = inflater.inflate(R.layout.fragment_gou, container, false);
+
+         b1 = inflate.findViewById(R.id.b1);
+
+         b1.setOnClickListener(new View.OnClickListener() {
+             @Override
+             public void onClick(View view) {
+                 Intent intent = new Intent(getActivity(), PayActivity.class);
+                 startActivity(intent);
+             }
+         });
+        return inflate;
     }
 }
