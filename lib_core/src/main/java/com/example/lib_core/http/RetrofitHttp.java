@@ -1,5 +1,7 @@
 package com.example.lib_core.http;
 
+import java.util.concurrent.TimeUnit;
+
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
@@ -23,6 +25,9 @@ public class RetrofitHttp {
 
             OkHttpClient client = new OkHttpClient.Builder()
                     .addInterceptor(httpLoggingInterceptor)
+                    .writeTimeout(10, TimeUnit.MINUTES)
+                    .connectTimeout(10, TimeUnit.MINUTES)
+                    .readTimeout(10, TimeUnit.MINUTES)
                     .build();
 
             retrofit = new Retrofit.Builder()

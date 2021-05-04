@@ -65,7 +65,7 @@ public class GouFragment extends Fragment {
                              Bundle savedInstanceState) {
         View inflate = inflater.inflate(R.layout.fragment_gou, container, false);
 
-         b1 = inflate.findViewById(R.id.b1);
+         b1 = inflate.findViewById(R.id.gou_bt);
 
          b1.setOnClickListener(new View.OnClickListener() {
              @Override
